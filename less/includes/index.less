@@ -1,0 +1,142 @@
+.ul-home {
+  height: 100vh;
+  width: 100%;
+  background: #000 url(../img/home/ul-home.jpg) center no-repeat;
+  background-size: cover;
+  @media (max-width: @tablet-xl) {
+    background: #000 url(../img/home/ul-home.jpg) 63% no-repeat;
+    background-size: cover;
+  }
+  @media (max-width: @mobile-xl) {
+    background: #000 url(../img/home/ul-home.jpg) 57% no-repeat;
+    background-size: cover;
+  }
+  &__wrap {
+    position: relative;
+    padding-left: 139px;
+    height: 100%;
+  }
+  &__desc,
+  &__quotes {
+    font-family: @pt-serif-r;
+    color: @c1;
+  }
+  &__desc {
+    position: absolute;
+    top: 166px;
+    left: 173px;
+    font-size: 20px;
+    line-height: 1.5;
+
+    @media (max-width: @desktop-s) {
+      font-size: 20px;
+    }
+    @media (max-width: @desktop-xs) {
+      font-size: 20px;
+      top: 85px;
+      left: 150px;
+    }
+    @media (max-width: @tablet-xl) {
+      font-size: 20px;
+      right: 94px;
+      position: absolute;
+      bottom: 280px;
+      top: inherit;
+      left: inherit;
+    }
+    @media (max-width: @mobile-xl) {
+      font-size: 12px;
+      right: 26px;
+      position: absolute;
+      bottom: 56px;
+      top: inherit;
+      left: inherit;
+    }
+    span {
+      font-size: 50px;
+      line-height: 2;
+      @media (max-width: @desktop-s) {
+        font-size: 25px;
+      }
+      @media (max-width: @desktop-xs) {
+        font-size: 25px;
+      }
+      @media (max-width: @tablet-xl) {
+        font-size: 25px;
+      }
+      @media (max-width: @mobile-xl) {
+        font-size: 22px;
+      }
+    }
+  }
+  &__quotes {
+    font-size: 35px;
+    position: absolute;
+    bottom: 134px;
+    right: 92px;
+    line-height: 1.5;
+    @media (max-width: @desktop-s) {
+      font-size: 30px;
+    }
+    @media (max-width: @desktop-xs) {
+      font-size: 25px;
+      right: 70px;
+    }
+    @media (max-width: @tablet-xl) {
+      font-size: 22px;
+      bottom: 71px;
+    }
+    @media (max-width: @mobile-xl) {
+      display: none;
+    }
+    q {
+      quotes: "“" "”" "‘" "’";
+    }
+    q:before {
+      content: open-quote;
+      top: -36px;
+      left: -45px;
+      position: absolute;
+      
+
+    
+    @media (max-width: 1450px) {
+      top: -18px;
+      left: -24px;
+    }
+      @media (max-width: @tablet-xl) {
+        top: -19px;
+        left: -21px;
+      }
+    }
+    q:after {
+      content: close-quote;
+      bottom: -50px;
+      right: -37px;
+      position: absolute;
+      @media (max-width:1450px) {
+        bottom: -18px;
+        right: -24px;
+      }
+      @media (max-width: @tablet-xl) {
+        bottom: -26px;
+        right: -17px;
+      }
+    }
+  }
+  &__social {
+    position: absolute;
+    bottom: 60px;
+    left: 188px;
+    display: none;
+    @media (max-width: @tablet-xl) {
+      display: none;
+    }
+    a {
+      width: 46px;
+      height: 46px;
+      display: block;
+      background: url(../img/home/instagram_white.svg) no-repeat;
+    }
+  }
+}
