@@ -1,8 +1,15 @@
-.container {
-  max-width: 1190px;
+body {
+  cursor: url(../img/cursor.png), auto;
+}
+.content-container {
+  max-width: 75%;
   margin: 0 auto;
   padding: 0 15px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
+
 .main-screen {
   height: 100vh;
   width: 100%;
@@ -13,7 +20,7 @@
     height: 100%;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
   }
   &__bonus {
     color: @c1;
@@ -31,40 +38,108 @@
   }
   &__promocode {
     display: flex;
+    position: relative;
+    margin-bottom: 50px;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 80px;
+      background: url("../img/code_dotted.png") no-repeat;
+      background-size: contain;
+      left: -32px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 198px;
+      height: 80px;
+      background: url("../img/copy_code_dotted.png") no-repeat;
+      background-size: contain;
+      right: -43px;
+      top: 0;
+      bottom: 0;
+    }
+    &_wrap {
+      height: 80px;
+      display: flex;
+      align-items: center;
+    }
     span {
-      font-family: Arial;
+      font-family: @ar-r;
       font-size: 40px;
       color: #f73427;
       text-transform: uppercase;
-      position: relative;
       margin-right: 50px;
-      &:before {
-        content: "";
-        position: absolute;
-        width: 270px;
-        height: 80px;
-        background: url("../img/code_dotted.png") no-repeat;
-        background-size: contain;
-        left: -101px;
-        right: 0;
-        top: 0;
-        bottom: 0;
-      }
-      &:after {
-        content: "";
-        position: absolute;
-        width: 198px;
-        height: 80px;
-        background: url("../img/copy_code_dotted.png") no-repeat;
-        background-size: contain;
-        right: -179px;
-        top: 0;
-        bottom: 0;
-      }
+      letter-spacing: 5px;
     }
-    &_input {
-      position: relative;
+  }
+  &__promocode_btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: @c1;
+    font-family: @ar-r;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    cursor: pointer;
+    z-index: 2;
+  }
 
+  &__btn {
+    background-color: @c3;
+    line-height: 83px;
+    border-radius: 50px;
+    width: 350px;
+    height: 80px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
+    transition: transform ease-in .4s, box-shadow ease-in .25s;
+    &:active {
+      transform: scale(0.9);
+      background-color: @c4;
+      box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
     }
+    &:hover {
+      transition: .4s;
+      background-color: @c4;
+    }
+    a {
+      font-family: @ar-b;
+      color: @c1;
+      font-size: 20px;
+      padding: 20px 117px;
+      text-transform: uppercase;
+      transition: .2s;
+      letter-spacing: 1.07px;
+      text-decoration: none;
+    }
+  }
+  &__bottom-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 55px;
+    align-items: flex-end;
+    &_logo {
+      margin-left: 3%;
+    }
+    &_terms {
+      margin-right: 3%;
+      font-family: @ar-r;
+      font-size: 14px;
+      color: #464646;
+    }
+  }
+  &_paralax {
+    position: absolute;
+    background: transparent url(../img/sparks_front.png) 172% no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
   }
 }
