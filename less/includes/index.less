@@ -1,5 +1,5 @@
 body {
-  cursor: url(../img/cursor.png), auto;
+  overflow: hidden;
 }
 .content-container {
   max-width: 75%;
@@ -8,6 +8,10 @@ body {
   height: 100%;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: @tablet-xl) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .main-screen {
@@ -15,12 +19,26 @@ body {
   width: 100%;
   background: #000 url(../img/bg.jpg) center no-repeat;
   background-size: cover;
+  @media (max-width: @desktop-xs) {
+    background: #000 url(../img/bg.jpg) 30% no-repeat;
+    background-size: cover;
+  }
+  @media (max-width: @tablet-xl) {
+    background: #000 url(../img/bg.jpg) 16% no-repeat;
+    background-size: cover;
+  }
   &__content_wrap {
     display: flex;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media (max-width: @tablet-xl) {
+      background-color: #000000ad;
+      border-radius: 10px;
+      padding: 25px;
+      height: auto;
+    }
   }
   &__bonus {
     color: @c1;
@@ -29,44 +47,52 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
+    @media (max-width: @desktop-s) {
+      margin-bottom: 40px;
+    }
     p:nth-child(1) {
       font-size: 208px;
+      @media (max-width: @desktop-s) {
+        font-size: 170px;
+      }
     }
     p:nth-child(2) {
       font-size: 67px;
+      @media (max-width: @desktop-s) {
+        font-size: 55px;
+      }
     }
   }
   &__promocode {
     display: flex;
     position: relative;
     margin-bottom: 50px;
-    &:before {
-      content: "";
-      position: absolute;
-      width: 270px;
-      height: 80px;
-      background: url("../img/code_dotted.png") no-repeat;
-      background-size: contain;
-      left: -32px;
-      right: 0;
-      top: 0;
-      bottom: 0;
+    @media (max-width: @desktop-s) {
+      margin-bottom: 40px;
     }
     &:after {
       content: "";
       position: absolute;
-      width: 198px;
+      width: 467px;
       height: 80px;
-      background: url("../img/copy_code_dotted.png") no-repeat;
+      background: url("../img/copy_code_dotted-1.png") no-repeat;
       background-size: contain;
       right: -43px;
       top: 0;
       bottom: 0;
+      @media (max-width: @desktop-s) {
+        width: 356px;
+        height: 60px;
+        right: -44px;
+      }
     }
     &_wrap {
       height: 80px;
       display: flex;
       align-items: center;
+      @media (max-width: @desktop-s) {
+       height: 60px;
+      }
     }
     span {
       font-family: @ar-r;
@@ -75,6 +101,10 @@ body {
       text-transform: uppercase;
       margin-right: 50px;
       letter-spacing: 5px;
+      @media (max-width: @desktop-s) {
+        font-size: 23px;
+        margin-right: 20px;
+      }
     }
   }
   &__promocode_btn {
@@ -88,6 +118,9 @@ body {
     transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
     cursor: pointer;
     z-index: 2;
+    @media (max-width: @desktop-s) {
+      font-size: 15px;
+    }
   }
 
   &__btn {
@@ -98,6 +131,11 @@ body {
     height: 80px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
     transition: transform ease-in .4s, box-shadow ease-in .25s;
+    @media (max-width: @desktop-s) {
+      width: 300px;
+      height: 60px;
+      line-height: 63px;
+    }
     &:active {
       transform: scale(0.9);
       background-color: @c4;
@@ -111,11 +149,15 @@ body {
       font-family: @ar-b;
       color: @c1;
       font-size: 20px;
-      padding: 20px 117px;
+      padding: 20px 110px;
       text-transform: uppercase;
       transition: .2s;
-      letter-spacing: 1.07px;
+      letter-spacing: 3px;
       text-decoration: none;
+      @media (max-width: @desktop-s) {
+        padding: 20px 90px;
+        font-size: 18px;
+      }
     }
   }
   &__bottom-block {
@@ -135,11 +177,9 @@ body {
       color: #464646;
     }
   }
-  &_paralax {
-    position: absolute;
-    background: transparent url(../img/sparks_front.png) 172% no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
+  .logo-img {
+    @media (max-width: @desktop-s) {
+      width: 140px;
+    }
   }
 }
